@@ -6,7 +6,7 @@ import { User } from './user.dto';
 export class UserResolver {
   constructor(private readonly userService: UserService) {}
 
-  @Query(() => [User])
+  @Query(() => [User], { name: 'users' })
   findAll() {
     return this.userService.findAll();
   }
